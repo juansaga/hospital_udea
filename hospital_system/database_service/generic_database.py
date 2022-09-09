@@ -11,7 +11,7 @@ class basic_database:
             info += ',' + data[i]
         info += '\n'
         text_plain.write(info)
-        print('Dato inserted with exito')
+        print('Dato ingresado con exito')
         text_plain.close()
 
 
@@ -23,11 +23,11 @@ class basic_database:
                 valores.append([x for x in linea.strip().split(",")])
                 if id == valores[count][0]:
                     print(valores[count])
-                    break
+                    return True
                 count += 1
             
         datos.close()
-        
+        return False
 
     def update(self, old_id : str, data: list):
         with open(self.database_name, "r") as datos:

@@ -1,5 +1,6 @@
 from tabnanny import check
 from hospital_system.database_service.generic_database import basic_database as pdb
+from hospital_system.database_service.patient import patient as pat
 
 class meet(pdb):
     def check_meet(self, id):
@@ -17,7 +18,16 @@ class meet(pdb):
         return False
     
     def create(self, data: list):
-        if self.check_meet(data[0]):
-            print('El paciente ya tiene cita activa')
-        else:
-            return super().create(data)
+        patient = pat( 'hospital_system/database_service/base/patient.txt' )
+        if patient.patient_exist(data[0]):
+            if self.check_meet(data[0]):
+                print('El paciente ya tiene cita activa')
+            else:
+                return super().create(data)
+        else: 
+            print('El paciente no existe, por favor creelo.')
+    
+
+    def read(self, id):
+        if self.check_meet(id) != True:
+            print('El paciente no tiene cita activa')
