@@ -7,3 +7,9 @@ Para interactuar coin las bases de datos utilice el archivo main.py en la carpet
 Creación: Dynamic Script.
 
 Comunicate con nosotros: jmanuel.sanchez@udea.edu.co
+
+Integrantes de equipo:
+
+Alexander Calderon
+Mateo Martin
+Juan Sanchez
