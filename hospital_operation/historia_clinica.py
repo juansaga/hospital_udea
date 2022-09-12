@@ -3,6 +3,9 @@ from hospital_system.database_service.generic_database import basic_database as 
 from hospital_operation.citas import meet as mt
 
 class historia(pdb):
+    """
+    Crud para manejo de las historias clinicas
+    """
     def create(self, data: list):
         meet = mt('hospital_system/database_service/base/cita.txt')
         if meet.check_meet(data[0]):

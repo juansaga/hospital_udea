@@ -3,7 +3,17 @@ from hospital_system.database_service.generic_database import basic_database as 
 from hospital_system.database_service.patient import patient as pat
 
 class meet(pdb):
+    """
+    Crud para manejo de las citas
+    """
     def check_meet(self, id):
+        """
+        Args:
+            id (str): identificacion paciente
+
+        Revisa la base de datos de las citas y retorna True en caso de tener una cita 
+        activa y False en casi contrario
+        """
         with open(self.database_name, "r") as datos:
             valores = []
             count = 0

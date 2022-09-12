@@ -1,10 +1,29 @@
 from os import remove
 class basic_database:
-    def __init__(self,database_name) -> None:
+
+    '''Base generica CRUD, interactua con archivos .txt. 
+    Tiene metodos de creacion, lectura, actualizacion y eliminación'''
+
+    def __init__(self,database_name: str) -> None:
+        
+        """Inicia el objeto CRUD
+        
+        Args:
+            database_name (str): Es una cadena de caracteres que especifica la ruta de
+            el archivo .txt """
+
         self.database_name = database_name
 
 
     def create(self, data: list):
+
+        """
+        Args:
+            data (list): lista con la informacion para agregar al archivo de texto
+
+        Agrega la informacion contenida en la data
+        """
+        
         text_plain = open( self.database_name , 'a')
         info = data[0]
         for i in range(1, len(data)):
@@ -15,7 +34,16 @@ class basic_database:
         text_plain.close()
 
 
-    def read(self, id):
+    def read(self, id: str):
+
+        """
+        Args: 
+            id (str): identificacion de el dato.
+
+        Muestra en pantalla la informacion correspondiente a la identificacion ingresada.
+
+        """
+
         with open(self.database_name, "r") as datos:
             valores = []
             count = 0
@@ -30,6 +58,13 @@ class basic_database:
         return False
 
     def update(self, old_id : str, data: list):
+        """
+        Args:
+            old_id (str): identificacion de el dato a modificar
+            data (list): lista con informacion para actualizar
+
+        Busca el registro con identificacion old_id y remplaza esta fila por data 
+        """
         with open(self.database_name, "r") as datos:
             valores = []
             k = False
@@ -57,7 +92,15 @@ class basic_database:
             print('dato doesnt exists')
         
 
-    def delete(self , id):
+    def delete(self , id: str):
+        """
+        Args: 
+            id (str): identificacion de el dato.
+
+        Elimina de el archivo de texto la informacion correspondiente a 
+        la identificacion ingresada.
+
+        """
         with open(self.database_name, "r") as datos:
             valores = []
             posicion=0
