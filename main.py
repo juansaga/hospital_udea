@@ -26,7 +26,7 @@ def main():
 
     historia = ht('hospital_system/database_service/base/historia.txt')
     #historia.create(['1666666666', 'Se hizo cirugia de busto con exito, tomar acetaminofen'])
-    historia.read('1216718055')
+    #historia.read('1216718055')
 
 
 if __name__ == "__main__":
