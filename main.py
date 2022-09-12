@@ -19,13 +19,14 @@ def main():
     meet = mt('hospital_system/database_service/base/cita.txt')
     #(id paciente, fecha cita, hora, id doctor, tipo de cita, estado cita 1 activa 0 para inactiva)
     #meet.create(['1666666666','9/09/2022','6:00 pm','234566','Aumento de busto','1'])
-    #meet.check_meet('1017240816')
+    #meet.check_meet('1216718055')
     #meet.read('1216718055')
     #meet.create(['1216718055','11/04/2023','4:00 pm','234566','Revision de rodilla','1'])
     #meet.update('1216718055',['1216718055','11/09/2022','8:00 am','52738494','Oscultacion','1'])
 
-    #historia = ht('hospital_system/database_service/base/cita.txt')
-    #historia.create(['1017240816'])
+    historia = ht('hospital_system/database_service/base/historia.txt')
+    #historia.create(['1666666666', 'Se hizo cirugia de busto con exito, tomar acetaminofen'])
+    historia.read('1216718055')
 
 
 if __name__ == "__main__":
